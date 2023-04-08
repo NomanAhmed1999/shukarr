@@ -83,56 +83,58 @@ const ProductDetails = ({ product, products }) => {
                         </div>
 
                         {/* PRODUCT SIZE RANGE START */}
-                        <div className="mb-10">
-                            {/* HEADING START */}
-                            <div className="flex justify-between mb-2">
-                                <div className="text-md font-semibold">
-                                    Select Size
-                                </div>
-                                <div className="text-md font-medium text-black/[0.5] cursor-pointer">
-                                    Select Guide
-                                </div>
-                            </div>
-                            {/* HEADING END */}
 
-                            {/* SIZE START */}
-                            <div
-                                id="sizesGrid"
-                                className="grid grid-cols-3 gap-2"
-                            >
-                                {
-                                p.size && p.size.data && p.size.data.length > 0 ?
-                                p.size.data?.map((item, i) => (
-                                    <div
-                                        key={i}
-                                        className={`border rounded-md text-center py-3 font-medium ${
-                                            item.enabled
-                                                ? "hover:border-black cursor-pointer"
-                                                : "cursor-not-allowed bg-black/[0.1] opacity-50"
-                                        } ${
-                                            selectedSize === item.size
-                                                ? "border-black"
-                                                : ""
-                                        }`}
-                                        onClick={() => {
-                                            setSelectedSize(item.size);
-                                            setShowError(false);
-                                        }}
-                                    >
-                                        {item.size}
+                        {
+                            p.size && p.size.data && p.size.data.length > 0 ?
+                                <div className="mb-10">
+                                    {/* HEADING START */}
+                                    <div className="flex justify-between mb-2">
+                                        <div className="text-md font-semibold">
+                                            Select Size
+                                        </div>
+                                        <div className="text-md font-medium text-black/[0.5] cursor-pointer">
+                                            Select Guide
+                                        </div>
                                     </div>
-                                )) : null}
-                            </div>
-                            {/* SIZE END */}
+                                    {/* HEADING END */}
 
-                            {/* SHOW ERROR START */}
-                            {showError && (
-                                <div className="text-red-600 mt-1">
-                                    Size selection is required
+                                    {/* SIZE START */}
+                                    <div
+                                        id="sizesGrid"
+                                        className="grid grid-cols-3 gap-2"
+                                    >
+                                        {p.size.data?.map((item, i) => (
+                                            <div
+                                                key={i}
+                                                className={`border rounded-md text-center py-3 font-medium ${item.enabled
+                                                        ? "hover:border-black cursor-pointer"
+                                                        : "cursor-not-allowed bg-black/[0.1] opacity-50"
+                                                    } ${selectedSize === item.size
+                                                        ? "border-black"
+                                                        : ""
+                                                    }`}
+                                                onClick={() => {
+                                                    setSelectedSize(item.size);
+                                                    setShowError(false);
+                                                }}
+                                            >
+                                                {item.size}
+                                            </div>
+                                        ))}
+                                    </div>
+                                    {/* SIZE END */}
+
+                                    {/* SHOW ERROR START */}
+                                    {showError && (
+                                        <div className="text-red-600 mt-1">
+                                            Size selection is required
+                                        </div>
+                                    )}
+                                    {/* SHOW ERROR END */}
                                 </div>
-                            )}
-                            {/* SHOW ERROR END */}
-                        </div>
+                                : null
+                        }
+
                         {/* PRODUCT SIZE RANGE END */}
 
                         {/* ADD TO CART BUTTON START */}
