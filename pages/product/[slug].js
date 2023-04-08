@@ -100,7 +100,9 @@ const ProductDetails = ({ product, products }) => {
                                 id="sizesGrid"
                                 className="grid grid-cols-3 gap-2"
                             >
-                                {p.size.data.map((item, i) => (
+                                {
+                                p.size && p.size.data && p.size.data.length > 0 ?
+                                p.size.data?.map((item, i) => (
                                     <div
                                         key={i}
                                         className={`border rounded-md text-center py-3 font-medium ${
@@ -119,7 +121,7 @@ const ProductDetails = ({ product, products }) => {
                                     >
                                         {item.size}
                                     </div>
-                                ))}
+                                )) : null}
                             </div>
                             {/* SIZE END */}
 
