@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram, FaMapMarkerAlt } from "react-icons/fa";
 import Wrapper from "./Wrapper";
 
 const Footer = () => {
@@ -106,7 +106,7 @@ const Footer = () => {
             <Wrapper className="flex justify-between mt-10 flex-col md:flex-row gap-[10px] md:gap-0">
                 {/* LEFT START */}
                 <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer text-center md:text-left">
-                    © 2023 Nike, Inc. All Rights Reserved
+                <FaMapMarkerAlt size={12} className="inline" /> <strong>Pakistan</strong> <span className="ml-4">© 2023 Shukarr, Inc. All Rights Reserved</span>
                 </div>
                 {/* LEFT END */}
 

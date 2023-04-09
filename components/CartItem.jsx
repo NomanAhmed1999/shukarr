@@ -55,6 +55,8 @@ const CartItem = ({ data }) => {
 
                 <div className="flex items-center justify-between mt-4">
                     <div className="flex items-center gap-2 md:gap-10 text-black/[0.5] text-sm md:text-md">
+                       {
+                        p.size && p.size.data && p.size.data.length > 0 ?
                         <div className="flex items-center gap-1">
                             <div className="font-semibold">Size:</div>
                             <select
@@ -81,6 +83,8 @@ const CartItem = ({ data }) => {
                                 })}
                             </select>
                         </div>
+                        : null
+                       }
 
                         <div className="flex items-center gap-1">
                             <div className="font-semibold">Quantity:</div>

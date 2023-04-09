@@ -4,7 +4,7 @@ import ProductCard from "@/components/ProductCard";
 import { fetchDataFromApi } from "@/utils/api";
 import useSWR from "swr";
 import { useRouter } from "next/router";
-const maxResult = 3;
+const maxResult = 10;
 
 const Category = ({ category, products, slug }) => {
     const [pageIndex, setPageIndex] = useState(1);
@@ -36,19 +36,9 @@ const Category = ({ category, products, slug }) => {
                     {data?.data?.map((product) => (
                         <ProductCard key={product?.id} data={product} />
                     ))}
-                    {/* <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard /> */}
                 </div>
-                {/* products grid end */}
 
-                {/* PAGINATION BUTTONS START */}
+
                 {data?.meta?.pagination?.total > maxResult && (
                     <div className="flex gap-3 items-center justify-center my-16 md:my-0">
                         <button
@@ -75,6 +65,9 @@ const Category = ({ category, products, slug }) => {
                         </button>
                     </div>
                 )}
+
+
+
                 {/* PAGINATION BUTTONS END */}
                 {isLoading && (
                     <div className="absolute top-0 left-0 w-full h-full bg-white/[0.5] flex flex-col gap-5 justify-center items-center">
