@@ -2,10 +2,10 @@ import HeroBanner from "@/components/HeroBanner";
 import ProductCard from "@/components/ProductCard";
 import Wrapper from "@/components/Wrapper";
 import { fetchDataFromApi } from "@/utils/api";
-export default function Home({ products }) {
+export default function Home({ products, banners }) {
     return (
         <main>
-            <HeroBanner />
+            <HeroBanner banners={banners} />
             <Wrapper>
                 {/* heading and paragaph start */}
                 <div className="text-center max-w-[800px] mx-auto my-[50px] md:my-[80px]">
@@ -43,8 +43,11 @@ export default function Home({ products }) {
 
 export async function getStaticProps() {
     const products = await fetchDataFromApi("/api/products?populate=*");
+    const banners = await fetchDataFromApi("/api/banners?populate=*");
+    console.log(banners);
+
 
     return {
-        props: { products },
+        props: { products, banners },
     };
 }
