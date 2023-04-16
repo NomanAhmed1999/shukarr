@@ -1,136 +1,111 @@
-import Link from "next/link";
-import React from "react";
-import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram, FaMapMarkerAlt, FaTiktok } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram, FaSnapchatGhost, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import Wrapper from "./Wrapper";
+import { Input } from 'antd';
 
 const Footer = () => {
+    const [mail, setMail] = useState('')
+
+
+
+    const subscribeByMail = () => {
+        console.log('mail', mail);
+    }
+
     return (
+        // className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-14 px-5 md:px-0"
         <footer className="bg-black text-white pt-14 pb-3">
-            <Wrapper className="flex justify-between flex-col md:flex-row gap-[50px] md:gap-0">
-                {/* LEFT START */}
-                <div className="flex gap-[50px] md:gap-[75px] lg:gap-[100px] flex-col md:flex-row">
-                    {/* MENU START */}
-                    <div className="flex flex-col gap-3 shrink-0">
-                        <div className="font-oswald font-medium uppercase text-sm cursor-pointer">
-                            Don't Miss Out
-                        </div>
-                        <div className="font-oswald font-medium uppercase text-sm cursor-pointer">
-                            become a partner
-                        </div>
-                        <div className="font-oswald font-medium uppercase text-sm cursor-pointer">
-                            sign up for email
-                        </div>
-                        <div className="font-oswald font-medium uppercase text-sm cursor-pointer">
-                            send us feedback
-                        </div>
-                        <div className="font-oswald font-medium uppercase text-sm cursor-pointer">
-                            student discount
+            <Wrapper className="flex justify-between flex-col gap-[50px] md:gap-0">
+                <div className="footer-top md:p-10 p-2 flex flex-row justify-between flex-wrap">
+                    <div>
+                        <p className="font-serif font-bold text-4xl">Don't Miss Out</p>
+                        <p>Subscribe for the latest news, product samples and coupons</p>
+                        <p className="mt-8 text-lg">Email</p>
+                        <Input placeholder="abc@gmail.com" className="rounded-none" type="text" onChange={(e) => { setMail(e.target.value) }} />
+                        <button
+                            className="w-full p-2 mt-4 bg-black border-slate-100 border-2 text-white text-lg font-medium transition-transform active:scale-95 mb-3 hover:opacity-75 flex items-center gap-2 justify-center"
+                            onClick={() => { subscribeByMail() }}
+                        >
+                            Subscribe
+                        </button>
+
+                        <div className="mt-8 flex flex-row justify-around items-center flex-wrap">
+                            <div
+                                onClick={() =>
+                                    window.open("https://www.facebook.com/Shukarr", "_blank")
+                                }
+                                className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center text-black hover:bg-white/[0.2] cursor-pointer"
+                            >
+                                <FaFacebookF size={20} color="white" />
+                            </div>
+                            <div
+                                onClick={() =>
+                                    window.open("https://www.instagram.com/shukarr", "_blank")
+                                }
+                                className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center text-black hover:bg-white/[0.2] cursor-pointer"
+                            >
+                                <FaInstagram size={20} color="white" />
+                            </div>
+                            <div
+                                onClick={() =>
+                                    window.open("https://www.twitter.com", "_blank")
+                                }
+                                className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center text-black hover:bg-white/[0.2] cursor-pointer"
+                            >
+                                <FaTwitter size={20} color="white" />
+                            </div>
+                            <div
+                                onClick={() =>
+                                    window.open("https://www.youtube.com", "_blank")
+                                }
+                                className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center text-black hover:bg-white/[0.2] cursor-pointer"
+                            >
+                                <FaYoutube size={20} color="white" />
+                            </div>
+                            <div
+                                onClick={() =>
+                                    window.open("https://www.youtube.com", "_blank")
+                                }
+                                className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center text-black hover:bg-white/[0.2] cursor-pointer"
+                            >
+                                <FaSnapchatGhost size={20} color="white" />
+                            </div>
+                            <div
+                                onClick={() =>
+                                    window.open("https://www.youtube.com", "_blank")
+                                }
+                                className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center text-black hover:bg-white/[0.2] cursor-pointer"
+                            >
+                                <FaWhatsapp size={20} color="white" />
+                            </div>
                         </div>
                     </div>
-                    {/* MENU END */}
+                    <div className="mt-10 md:mt-0">
+                        <h2 className="font-normal text-lg">Company</h2>
 
-                    {/* NORMAL MENU START */}
-                    <div className="flex gap-[50px] md:gap-[75px] lg:gap-[100px] shrink-0">
-                        {/* MENU START */}
-                        <div className="flex flex-col gap-3">
-                            <div className="font-oswald font-medium uppercase text-sm">
-                                get help
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Order Status
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Delivery
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Returns
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Payment Options
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Contact Us
-                            </div>
-                        </div>
-                        {/* MENU END */}
-
-                        {/* MENU START */}
-                        <div className="flex flex-col gap-3">
-                            <div className="font-oswald font-medium uppercase text-sm">
-                                About nike
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                News
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Careers
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Investors
-                            </div>
-                            <div className="text-sm text-white/[0.5] hover:text-white cursor-pointer">
-                                Sustainability
-                            </div>
-                        </div>
-                        {/* MENU END */}
+                        <ul className="list-none md:mt-4 mt-2 leading-loose cursor-pointer">
+                            <li className="text-gray-300">Home</li>
+                            <li className="text-gray-300">About Us</li>
+                        </ul>
                     </div>
-                    {/* NORMAL MENU END */}
+                    <div className="mt-10 md:mt-0">
+                        <div>
+                            <h2 className="font-normal text-lg">Customer Services</h2>
+
+                            <ul className="list-none md:mt-4 mt-2 leading-loose cursor-pointer">
+                                <li className="text-gray-300">Contact Us</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                {/* LEFT END */}
-
-                {/* RIGHT START */}
-                <div className="flex gap-4 justify-center md:justify-start">
-                    <div
-                        onClick={() =>
-                            window.open("https://www.facebook.com/Shukarr", "_blank")
-                        }
-                        className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer"
-                    >
-                        <FaFacebookF size={20} />
-                    </div>
-                    <div
-                        onClick={() =>
-                            window.open("https://www.instagram.com/shukarr", "_blank")
-                        }
-                        className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer"
-                    >
-                        <FaInstagram size={20} />
-                    </div>
-                    {/* <div
-                        onClick={() =>
-                            window.open("https://www.tiktok.com/@shukarrofficial", "_blank")
-                        }
-                        className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-white/[0.5] cursor-pointer"
-                    >
-                        <FaTiktok size={20} />
-                    </div> */}
+                <div className="footer-bottom">
                 </div>
-                {/* RIGHT END */}
             </Wrapper>
-            <Wrapper className="flex justify-between mt-10 flex-col md:flex-row gap-[10px] md:gap-0">
-                {/* LEFT START */}
-                <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer text-center md:text-left">
-                <FaMapMarkerAlt size={12} className="inline" /> <strong>Pakistan</strong> <span className="ml-4">© 2023 Shukarr, Inc. All Rights Reserved</span>
+            <div className="p-2 border-2 border-gray-800 w-full h-10 flex items-center">
+                <div className="text-[12px] text-white/[0.5] text-center md:text-left">
+                    <FaMapMarkerAlt size={12} className="inline" /> <strong>Pakistan</strong> <span className="ml-4">© 2023 Shukarr, Inc. All Rights Reserved</span>
                 </div>
-                {/* LEFT END */}
-
-                {/* RIGHT START */}
-                <div className="flex gap-2 md:gap-5 text-center md:text-left flex-wrap justify-center">
-                    <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
-                        Guides
-                    </div>
-                    <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
-                        Terms of Sale
-                    </div>
-                    <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
-                        Terms of Use
-                    </div>
-                    <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer">
-                        Privacy Policy
-                    </div>
-                </div>
-                {/* RIGHT END */}
-            </Wrapper>
+            </div>
         </footer>
     );
 };
