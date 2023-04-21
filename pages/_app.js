@@ -51,7 +51,7 @@ export default function App({ Component, pageProps }) {
     return (
         <>
             <Head>
-                <title>Shukarr | Online Store</title>
+                <title>Shukarr | Online Store | Fashion | Gadgets | Toys | Accessories | Kitchen Appliances</title>
                 <meta
                     name="description"
                     content="Shukarr.com offers a vast selection of premium products for all your needs. From home essentials to tech gadgets, find everything you need at unbeatable prices."
