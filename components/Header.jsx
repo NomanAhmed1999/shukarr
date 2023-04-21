@@ -55,7 +55,7 @@ const Header = () => {
         >
             <Wrapper className="h-[60px] flex justify-between items-center">
                 <Link href="/">
-                    <img src="/logo.png" className="w-[234px] md:w-[230px]" />
+                    <img src="/logo.png" alt="website logo" className="w-[234px] md:w-[230px]" />
                 </Link>
 
                 <Menu

@@ -49,9 +49,9 @@ const Cart = () => {
                     <>
                         {/* HEADING AND PARAGRAPH START */}
                         <div className="text-center max-w-[800px] mx-auto mt-8 md:mt-0">
-                            <div className="text-[28px] md:text-[34px] mb-5 font-semibold leading-tight">
+                            <h1 className="text-[28px] md:text-[34px] mb-5 font-semibold leading-tight">
                                 Shopping Cart
-                            </div>
+                            </h1>
                         </div>
                         {/* HEADING AND PARAGRAPH END */}
 
@@ -96,7 +96,7 @@ const Cart = () => {
                                     onClick={() => {setCheckoutFormOpen(true)}}
                                 >
                                     Checkout
-                                    {loading && <img src="/spinner.svg" />}
+                                    {loading && <img src="/spinner.svg" alt="loader" />}
                                 </button>
                                 {/* BUTTON END */}
                             </div>

@@ -45,9 +45,9 @@ const ProductDetails = ({ product, products }) => {
                     {/* right column start */}
                     <div className="flex-[1] py-3">
                         {/* PRODUCT TITLE */}
-                        <div className="text-[34px] font-semibold mb-2 leading-tight">
+                        <h1 className="text-[34px] font-semibold mb-2 leading-tight">
                             {p.name}
-                        </div>
+                        </h1>
 
                         {/* PRODUCT SUBTITLE */}
                         <div className="text-lg font-semibold mb-5">

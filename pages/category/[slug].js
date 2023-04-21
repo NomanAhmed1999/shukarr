@@ -26,9 +26,9 @@ const Category = ({ category, products, slug }) => {
         <div className="w-full md:py-20 relative">
             <Wrapper>
                 <div className="text-center max-w-[800px] mx-auto mt-8 md:mt-0">
-                    <div className="text-[28px] md:text-[34px] mb-5 font-semibold leading-tight">
+                    <h1 className="text-[28px] md:text-[34px] mb-5 font-semibold leading-tight">
                         {category?.data?.[0]?.attributes?.name}
-                    </div>
+                    </h1>
                 </div>
 
                 {/* products grid start */}
@@ -71,7 +71,7 @@ const Category = ({ category, products, slug }) => {
                 {/* PAGINATION BUTTONS END */}
                 {isLoading && (
                     <div className="absolute top-0 left-0 w-full h-full bg-white/[0.5] flex flex-col gap-5 justify-center items-center">
-                        <img src="/logo.png" width={350} />
+                        <img src="/logo.png" width={350} alt="website logo" />
                         {/* <span className="text-2xl font-medium">Loading...</span> */}
                     </div>
                 )}
