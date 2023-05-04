@@ -14,9 +14,10 @@ const Success = () => {
                         Your order has been placed successfully.
                     </div>
                     <div className="text-base mt-5">
-                        For any product related query, drop an email to
+                        <div className="underline">shukarr0.3@gmail.com</div>
+                        <div>0320-9224569</div>
+                        For any product related query, feel free to contact us.
                     </div>
-                    <div className="underline">shoeshopcontact@shop.com</div>
 
                     <Link href="/" className="font-bold mt-5">
                         Continue Shopping

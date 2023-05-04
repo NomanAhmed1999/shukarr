@@ -104,7 +104,7 @@ const CheckoutForm = ({ disabledCheckoutForm, cartItems }) => {
                 </section>
                 <footer className='flex justify-end p-5'>
                     <Button className='mr-2' onClick={disabledCheckoutForm}>Cancel</Button>
-                    <Button className=' bg-black text-white' onClick={checkout}>Checkout</Button>
+                    <Button className='finish-gtm bg-black text-white' onClick={checkout}><span className="finish-gtm">Checkout</span></Button>
                 </footer>
             </div>
             {loading ?

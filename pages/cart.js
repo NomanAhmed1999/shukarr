@@ -92,8 +92,8 @@ const Cart = () => {
 
                                 {/* BUTTON START */}
                                 <button
-                                    className="w-full py-4 rounded-full bg-black text-white text-lg font-medium transition-transform active:scale-95 mb-3 hover:opacity-75 flex items-center gap-2 justify-center"
-                                    onClick={() => {setCheckoutFormOpen(true)}}
+                                    className="checkout-gtm w-full py-4 rounded-full bg-black text-white text-lg font-medium transition-transform active:scale-95 mb-3 hover:opacity-75 flex items-center gap-2 justify-center"
+                                    onClick={() => { setCheckoutFormOpen(true) }}
                                 >
                                     Checkout
                                     {loading && <img src="/spinner.svg" alt="loader" />}
@@ -102,7 +102,7 @@ const Cart = () => {
                             </div>
                             {/* SUMMARY END */}
                             {checkoutFormOpen ?
-                            <CheckoutForm disabledCheckoutForm={() => {setCheckoutFormOpen(false)}} cartItems={cartItems} /> : null
+                                <CheckoutForm disabledCheckoutForm={() => { setCheckoutFormOpen(false) }} cartItems={cartItems} /> : null
                             }
                         </div>
                         {/* CART CONTENT END */}
