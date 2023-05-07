@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram, FaSnapchatGhost, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import Wrapper from "./Wrapper";
 import { Input } from 'antd';
+import { postRequest } from '@/utils/api';
 
 const Footer = () => {
     const [mail, setMail] = useState('')
@@ -10,6 +11,23 @@ const Footer = () => {
 
     const subscribeByMail = () => {
         console.log('mail', mail);
+        try {
+            if (!mail) {
+                // setErr(true);
+                console.log('failed')
+            } else {
+                // setErr(false);
+                // setLoading(true);
+                let res = postRequest('/api/subscribed-emails', {email: mail});
+                if (res)
+                    console.log('res', res);
+
+            }
+        } catch (error) {
+            console.log(error);
+            // setLoading(false);
+
+        }
     }
 
     return (

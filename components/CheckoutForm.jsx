@@ -1,7 +1,7 @@
 import { React, useState } from 'react';
 import { BiX } from "react-icons/bi";
 import { Input, Button } from 'antd';
-import { makePaymentRequest } from '@/utils/api';
+import { postRequest } from '@/utils/api';
 import { useRouter } from 'next/router';
 import { useSelector, useDispatch } from "react-redux";
 import { removeAllFromCart } from "@/store/cartSlice";
@@ -41,7 +41,7 @@ const CheckoutForm = ({ disabledCheckoutForm, cartItems }) => {
             } else {
                 setErr(false);
                 setLoading(true);
-                let res = makePaymentRequest('/api/orders', orderItem);
+                let res = postRequest('/api/orders', orderItem);
                 if (res)
                     console.log('res', res);
                     setLoading(false);

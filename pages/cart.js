@@ -4,7 +4,6 @@ import Link from "next/link";
 import Wrapper from "@/components/Wrapper";
 import CartItem from "@/components/CartItem";
 import { useSelector } from "react-redux";
-import { makePaymentRequest } from "@/utils/api";
 import CheckoutForm from "@/components/CheckoutForm";
 // import { loadStripe } from "@stripe/stripe-js";
 // const stripePromise = loadStripe(
